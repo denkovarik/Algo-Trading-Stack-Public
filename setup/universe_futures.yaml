@@ -1,0 +1,13 @@
+# Human-friendly names map to Yahoo tickers
+# You can add/remove instruments here freely.
+Futures:
+  Gold: GC=F
+  Silver: SI=F
+  Crude_Oil: CL=F
+  Soybeans: ZS=F
+  Sugar: SB=F
+  US_Treasury_Bonds: ZB=F
+  Euro: 6E=F
+  British_Pound: 6B=F
+  Live_Cattle: LE=F
+
