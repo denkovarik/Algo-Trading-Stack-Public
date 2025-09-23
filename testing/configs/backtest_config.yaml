@@ -1,0 +1,16 @@
+data_source: Yahoo_Finance
+assets:
+  - symbol: CL=F
+    type: futures
+    timeframe: 1Day
+    start_date: 2015-07-14
+    end_date: 2015-07-14
+    file: yahoo_finance/data/Futures/Crude_Oil/1Day_timeframe/crude_oil_10yr.csv
+
+  - symbol: GC=F
+    type: futures
+    timeframe: 1Day
+    start_date: 2015-07-14
+    end_date: 2025-07-14
+    file: yahoo_finance/data/Futures/Gold/1Day_timeframe/gold_10yr.csv
+
