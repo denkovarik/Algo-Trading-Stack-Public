@@ -1,0 +1,19 @@
+data_source: Yahoo_Finance
+initial_cash: 1000000
+commission_per_contract: 2.5    # USD per contract (both sides, can be per side if desired)
+fee_per_trade: 1.0              # USD per trade (flat, optional)
+assets:
+  - symbol: CL=F  # Crude Oil Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Crude_Oil/1Day_timeframe/crude_oil_10yr.csv
+    contract_size: 1000
+    tick_size: 0.01
+    tick_value: 10.0
+    initial_margin: 5060
+    maintenance_margin: 4600
+    slippage_pct: 0.0005
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: NYMEX
+
