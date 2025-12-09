@@ -1,0 +1,128 @@
+data_source: Yahoo_Finance
+
+# Engine/global knobs
+initial_cash: 1000000
+commission_per_contract: 2.5    # USD per contract (global default; assets may override)
+fee_per_trade: 1.0              # USD per trade (flat, optional)
+
+# New: make behavior explicit & reproducible
+include_slippage: true          # turn on slippage so per‑asset slippage_pct is used 
+slippage_ticks: 0               # prefer pct slippage unless overridden per asset
+slippage_pct: 0.0               # harmless default; assets below have their own
+live_price_mode: open_only      # fills/marks at the bar OPEN during the open phase 
+skip_synthetic_open_bars: true  # avoid emitting 'open' events for synthetic gap bars 
+random_seed: 123                # reproducibility for any RNG use
+
+assets:
+  - symbol: 6B=F  # British Pound Futures
+    type: futures
+    file: yahoo_finance/data/Futures/British_Pound/1Day_timeframe/british_pound_2000-2015.csv
+    contract_size: 62500
+    tick_size: 0.0001
+    tick_value: 6.25
+    initial_margin: 2420
+    maintenance_margin: 2200
+    slippage_pct: 0.0007
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: CME
+
+  - symbol: CL=F  # Crude Oil Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Crude_Oil/1Day_timeframe/crude_oil_2000-2015.csv
+    contract_size: 1000
+    tick_size: 0.01
+    tick_value: 10.0
+    initial_margin: 5060
+    maintenance_margin: 4600
+    slippage_pct: 0.0005
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: NYMEX
+
+  - symbol: 6E=F  # Euro Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Euro/1Day_timeframe/euro_2000-2015.csv
+    contract_size: 125000
+    tick_size: 0.00005
+    tick_value: 6.25
+    initial_margin: 2530
+    maintenance_margin: 2300
+    slippage_pct: 0.0006
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: CME
+
+  - symbol: GC=F  # Gold Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Gold/1Day_timeframe/gold_2000-2015.csv
+    contract_size: 100
+    tick_size: 0.1
+    tick_value: 10.0
+    initial_margin: 7200
+    maintenance_margin: 6500
+    slippage_pct: 0.0008
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: COMEX
+
+  - symbol: LE=F  # Live Cattle Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Live_Cattle/1Day_timeframe/live_cattle_2000-2015.csv
+    contract_size: 40000
+    tick_size: 0.025
+    tick_value: 10.0
+    initial_margin: 1500
+    maintenance_margin: 1350
+    slippage_pct: 0.0012
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: CME
+
+  - symbol: SI=F  # Silver Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Silver/1Day_timeframe/silver_2000-2015.csv
+    contract_size: 5000
+    tick_size: 0.005
+    tick_value: 25.0
+    initial_margin: 8000
+    maintenance_margin: 7000
+    slippage_pct: 0.001
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: COMEX
+
+  - symbol: ZS=F  # Soybean Futures
+    type: futures
+    file: yahoo_finance/data/Futures/Soybeans/1Day_timeframe/soybeans_2000-2015.csv
+    contract_size: 5000
+    tick_size: 0.25
+    tick_value: 12.5
+    initial_margin: 2750
+    maintenance_margin: 2500
+    slippage_pct: 0.0011
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: CBOT
+
+  - symbol: ZB=F  # US Treasury Bonds Futures
+    type: futures
+    file: yahoo_finance/data/Futures/US_Treasury_Bonds/1Day_timeframe/us_treasury_bonds_2000-2015.csv
+    contract_size: 100000        # corrected nominal size
+    tick_size: 0.015625
+    tick_value: 15.625
+    initial_margin: 3000
+    maintenance_margin: 2700
+    slippage_pct: 0.0004
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: CBOT
+

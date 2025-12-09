@@ -1,0 +1,14 @@
+numpy>=1.24
+pandas>=2.0
+pyyaml>=6.0
+requests>=2.31
+pyqt5>=5.15
+pyqtgraph>=0.13
+tqdm>=4.65
+# CPU-only PyTorch will be installed explicitly in install.sh
+stable-baselines3>=2.1
+sb3-contrib>=2.1
+pytest>=8.0
+pytest-cov>=4.1
+yfinance>=0.2.50
+joblib>=1.5.2

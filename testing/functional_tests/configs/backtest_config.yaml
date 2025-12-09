@@ -1,0 +1,19 @@
+data_source: Yahoo_Finance
+initial_cash: 1000000
+commission_per_contract: 2.5    # USD per contract (both sides, can be per side if desired)
+fee_per_trade: 1.0              # USD per trade (flat, optional)
+assets:
+  - symbol: 6B=F  # British Pound Futures
+    type: futures
+    file: yahoo_finance/data/Futures/British_Pound/1Day_timeframe/british_pound_10yr.csv
+    contract_size: 62500
+    tick_size: 0.0001
+    tick_value: 6.25
+    initial_margin: 2420
+    maintenance_margin: 2200
+    slippage_pct: 0.0007
+    commission_per_contract: 2.0
+    fee_per_trade: 1.5
+    currency: USD
+    exchange: CME
+
